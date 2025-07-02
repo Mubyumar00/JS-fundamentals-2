@@ -1,5 +1,7 @@
 'use strict';
 
+// const RETIREMENT_AGE = 65;
+
 // function logger() {
 //     console.log('my first Logger');
 // }
@@ -23,8 +25,7 @@
 
 // Function Declaration vs Function Expression
 
-// Function Declaration
-// function calcAge1(birthYear) {
+// Function Declaration // function calcAge1(birthYear) {
 //     return 2025 - birthYear;
 // }
 // const age1 = calcAge1(1991);
@@ -41,12 +42,129 @@
 
 
 // ARROW FUNCTION 
-const calcAge3 = birthYear => 2025 - birthYear;
-const age3 = calcAge3(1991);
-console.log(age3);
+// const calculateAge = birthYear => 2025 - birthYear;
+// const age3 = calculateAge(1991);
+// console.log(age3);
 
-const yearsUntilRetirement = (birthYear, firstName) => {
-    const age = 2025 - birthYear;
-    const retirement = 65 - age;
-    return `${firstName} retires in ${retirement} years.`;
+// const getYearsUntilRetirement = (birthYear, firstName) => {
+//     const age = 2025 - birthYear;
+//     const retirement = RETIREMENT_AGE - age;
+//     return `${firstName} retires in ${retirement} years.`;
+// };
+
+// console.log(getYearsUntilRetirement(1991, 'John'));
+// console.log(getYearsUntilRetirement(1980, 'Jane'));
+
+
+// Function calling another function
+// function cutFruitPieces(fruit) {
+//     return fruit * 4;   
+    
+// }
+
+// function fruitProcessor(apples, oranges) {
+//     const applePieces = cutFruitPieces(apples);
+//     const orangePieces = cutFruitPieces(oranges);
+
+//     const juice = `Juice with ${applePieces} pieces of apples and ${orangePieces} pieces of oranges.`;
+//     return juice;
+// }
+// console.log(fruitProcessor(2, 3));
+
+
+// Another example of function calling another function. Making sandwich by slicing bread and cheese.
+
+// function sliceIngredient(ingredient) {
+//     return ingredient * 2; // Assuming each ingredient is sliced into 2 pieces
+// }
+
+// function makeSandwich(breadSlices, cheeseSlices) {
+//     const slicedBread = sliceIngredient(breadSlices);
+//     const slicedCheese = sliceIngredient(cheeseSlices);
+
+//     const sandwich = `Sandwich with ${slicedBread} slices of bread and ${slicedCheese} slices of cheese.`;
+//     return sandwich;
+// }
+// console.log(makeSandwich(2, 3)); // Example usage
+
+
+// Another example of function calling another function.  building a salad by chopping vegetables into smaller pieces.
+// function chopVegetable(vegetable) {
+//     return vegetable * 3; // Assuming each vegetable is chopped into 3 pieces
+// }
+
+// function makeSalad(tomatoes, cucumbers) {
+//     const choppedTomatoes = chopVegetable(tomatoes);
+//     const choppedCucumbers = chopVegetable(cucumbers);
+
+//     const salad = `Salad with ${choppedTomatoes} pieces of tomatoes and ${choppedCucumbers} pieces of cucumbers.`;
+//     return salad;
+// }
+// console.log(makeSalad(2, 4)); // Example usage
+
+
+// Example calculating retirement age, calling a function inside another function.
+// const calcAge = function (birthYear) {
+//     return 2025 - birthYear;
+// }
+
+// const yearsUntilRetirement = function (_birthYear, _firstname) {
+//     const age = calcAge(_birthYear)
+//     const retirement = 65 - age;
+//     if (retirement > 0) {
+//         console.log(`${_firstname} retires in ${retirement} years.`);
+//         return retirement;
+//     } else {
+//         console.log(`${_firstname} has already retired 🎉.`);
+//         return -1; // Indicating retirement has already occurred
+//     }
+// }
+// console.log(yearsUntilRetirement(1991, 'John')); // John retires in 40 years.
+// console.log(yearsUntilRetirement(1950, 'Jane')); // Jane has already retired 🎉.
+
+
+// Calculating Years Until Graduation
+// const getCurrentGrades = function (enrollmentYear) {
+//     return 2025 - enrollmentYear + 1; // Assuming the current year is 2025 and the student is in their final year
+// }
+
+// const yearsUntilGraduation = function (enrollmentYear, studentName) {
+//     const currentGrade = getCurrentGrades(enrollmentYear);
+//     const totalGrades = 12;
+//     const yearsLeft = totalGrades - currentGrade;
+
+//     if (yearsLeft > 0) {
+//         console.log(`${studentName} has ${yearsLeft} years left until graduation.`);
+//         return yearsLeft;
+//     } else {
+//         console.log(`${studentName} has already graduated 🎓.`);
+//         return 0; // Indicating graduation has already occurred
+//     }
+// }
+// console.log(yearsUntilGraduation(2015, 'Alice')); // Alice has 8 years left until graduation.
+// console.log(yearsUntilGraduation(2010, 'Bob')); // Bob has already graduated 🎓.
+
+
+// Exercise
+// Function to calculate average score
+const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+
+// Calculate average for Team A and Team B
+const avgDolphins = calcAverage(44, 23, 71);
+const avgKoalas = calcAverage(65, 54, 49);
+
+console.log(`Average score of Dolphins: ${avgDolphins}`);
+console.log(`Average score of Koalas: ${avgKoalas}`);
+
+// Function to check the winner
+const checkWinner = (avgDolphins, avgKoalas) => {
+    if (avgDolphins > avgKoalas) {
+        console.log(`Dolphins win (${avgDolphins} vs ${avgKoalas})`);
+    } else if (avgKoalas > avgDolphins) {
+        console.log(`Koalas win (${avgKoalas} vs ${avgDolphins})`);
+    } else {
+        console.log(`It's a draw (${avgDolphins} vs ${avgKoalas})`);
+    }
 };
+
+checkWinner(avgDolphins, avgKoalas);

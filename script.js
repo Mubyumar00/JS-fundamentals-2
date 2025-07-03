@@ -168,3 +168,68 @@ const checkWinner = (avgDolphins, avgKoalas) => {
 };
 
 checkWinner(avgDolphins, avgKoalas);
+
+
+// Comparing Homework Focus between Two Students// Function to calculate average homework focus time
+const calcAverageTime = (time1, time2, time3) => (time1 + time2 + time3) / 3;
+
+// Calculate average time for Student A and Student B
+const avgStudentA = calcAverageTime(2, 3, 4);
+const avgStudentB = calcAverageTime(3, 2, 5);
+
+console.log(`Average homework focus time of Student A: ${avgStudentA} hours`);
+console.log(`Average homework focus time of Student B: ${avgStudentB} hours`);
+
+// Function to check who focused more on homework
+const checkFocusWinner = (avgStudentA, avgStudentB) => {
+    if (avgStudentA > avgStudentB) {
+        console.log(`Student A focused more on homework (${avgStudentA} hours vs ${avgStudentB} hours)`);
+    } else if (avgStudentB > avgStudentA) {
+        console.log(`Student B focused more on homework (${avgStudentB} hours vs ${avgStudentA} hours)`);
+    } else {
+        console.log(`Both students focused equally on homework (${avgStudentA} hours)`);
+    }
+}
+checkFocusWinner(avgStudentA, avgStudentB);
+
+
+// Comparing Average Salary of Two Employees 
+const calcAverageSalary = (salary1, salary2, salary3) => (salary1 + salary2 + salary3) / 3;
+
+// Calculate average salaries for two employees
+const avgSalaryA = calcAverageSalary(500, 550, 600);
+const avgSalaryB = calcAverageSalary(700, 680, 710);
+
+console.log(`average salary of Employee A: $${avgSalaryA}`);
+console.log(`average salary of Employee B: $${avgSalaryB}`);
+
+// Function to check who has a higher average salary
+const checkSalaryWinner = (avgSalaryA, avgSalaryB) => {
+    if (avgSalaryA > avgSalaryB) {
+        console.log(`Employee A has a higher average salary ($${avgSalaryA} vs $${avgSalaryB})`);
+    } else {
+        console.log(`Employee B has a higher average salary ($${avgSalaryB} vs $${avgSalaryA})`);
+    }
+}
+checkSalaryWinner(avgSalaryA, avgSalaryB);
+
+
+// Comparing Average Speed of Two Cars
+const calcAverageSpeed = (speed1, speed2, speed3) => (speed1 + speed2 + speed3) / 3;
+
+// Calculate average speeds for two cars
+const avgSpeedCarA = calcAverageSpeed(60, 70, 80);
+const avgSpeedCarB = calcAverageSpeed(75, 85, 90);
+
+console.log(`Average speed of Car A: ${avgSpeedCarA} km/h`);
+console.log(`Average speed of Car B: ${avgSpeedCarB} km/h`);
+
+// Function to check which car is faster
+const checkSpeedWinner = (avgSpeedCarA, avgSpeedCarB) => {
+    if (avgSpeedCarA > avgSpeedCarB) {
+        console.log(`Car A is faster (${avgSpeedCarA} km/h vs ${avgSpeedCarB} km/h)`);
+    } else {
+        console.log(`Car B is faster (${avgSpeedCarB} km/h vs ${avgSpeedCarA} km/h)`);
+    }
+}
+checkSpeedWinner(avgSpeedCarA, avgSpeedCarB);

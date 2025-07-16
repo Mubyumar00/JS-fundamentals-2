@@ -40,3 +40,7 @@ Umar.location = 'Nigeria';
 // Adding a new property to the object using bracket notation
 Umar['twitter'] = '@umar_mubarak';
 console.log(Umar);
+
+// Challenge
+// "Umar has 3 friends, and his best friend is called Michael"  
+console.log(`${Umar.firstName} has ${Umar.friends.length} friends, and his best friend is called ${Umar.friends[0]}`);
